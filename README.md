@@ -13,6 +13,14 @@
 # Terceiro Jogo
 * O Gousma's wars segue o mesmo princípio de estilo co-op de até 2 jogadores do jogo anterior. Cada jogador possui uma gousma que comça com nível 1 de fúria, sendo que os jogadores possuem a opção de atacar, somando os pontos de fúria da gousma atacada com os pontos da gousma que atacou, ou de dividir uma gousma, caso uma delas tenha morrido. Os jogadores possuem um máximo de 2 gousmas e elaas morrem se atingirem o nível 5 de fúria ou mais. Ganha aquele que derrotar todas as Gousmas inimigas primeiro.
 
-#Ferramentas
+# Ferramentas
 * Utilizamos o chat gpt como auxiliar e ferramenta para nos ajudar a organizar e a nos dar ideias para os códigos dos jogos, assim como a ajuda de nossos colegas.
 * Todo o código foi feito e testado no Falcon C++
+
+# CHAT GPT
+## Aqui estão as perguntas feitas no chat gpt
+* Para que serve o const char em C
+* Para que serve o switch em C
+* Qual é a função do break em C
+* Para que serve o struct em C
+* Qual é a função do voidd em C

@@ -1,21 +1,90 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
+#include <time.h>
+#include <string.h> // Para usar strcpy()
 #include <windows.h>
+#include <locale.h>
 
-int somV();
-int somD();
 
-int main() {
-    setlocale(LC_ALL, "portuguese");
+int jogo=0;
+int jogo1();
+int jogo2();
+int jogo3();
+
+
+
+
+int main(){
+	
+	
+
+	setlocale(LC_ALL, "portuguese");
+	while(1){
+	system("cls");	
+	
+	if (jogo == 0) {
+            system("cls");
+            printf(" **MENU PRINCIPAL***\n");
+            printf("\n1 - $$$SHOW DO MILHÃO$$$\n\n");
+            printf("2 - Cobra na caixa!\n\n");
+            printf("3 - Gousmas War\n\n");
+            printf("\nEscolha Um Jogo: ");
+            scanf(" %d", &jogo);
+            if (jogo < 1 || jogo > 3) {
+                system("cls");
+                printf("\n\n** INVALIDO**\n\n");
+                Sleep(500);
+                fflush(stdin);
+			}
+        }
+	
+	
+	
+	switch(jogo){
+			
+		
+	case 1:
+		
+		jogo1();
+		
+		break;
+	case 2:
+		
+		jogo2();
+		
+		break;
+	
+	case 3:
+	
+		jogo3();
+			
+		break;
+	
+	}
+	
+	
+	}
+	
+}
+
+
+//JOGO 1
+int jogo1(){
+	
+
+
+
+
+
+
     int c = 0, b = 0;
-    char a = 0;
-    char texto[] = "No jogo 'Perguntas e Respostas', serao 5 Perguntas com \n4 alternativas cada. Nele veremos assuntos relacionados... ";
-    char perg1[] = "Qual destas substâncias faz\n parte da composição do vidro?";
-    char perg2[] = "Em que ordem surgiram os modelos atômicos?";
-    char perg3[] = "Qual a velocidade da luz?";
-    char perg4[] = "Como é a conjugação do verbo caber na\n 1.ª pessoa do singular\n do presente do indicativo?";
-    char perg5[] = "A todo instante, raios cósmicos atingem a atmosfera terrestre\n e colidem com núcleos atômicos.\n";
+    char a = '1';
+    char texto[] = " No jogo 'Perguntas e Respostas', serao 5 Perguntas com \n4 alternativas cada. Nele veremos assuntos relacionados... ";
+    char perg1[] = "VALENDO R$1000\n Qual destas substâncias faz\n parte da composição do vidro?";
+    char perg2[] = "VALENDO R$10000\n  Em que ordem surgiram os modelos atômicos?";
+    char perg3[] = "VALENDO R$100000\n Qual a velocidade da luz?";
+    char perg4[] = "VALENDO R$500000\n Como é a conjugação do verbo caber na\n 1.ª pessoa do singular\n do presente do indicativo?";
+    char perg5[] = "VALENDO R$1000000\n A todo instante, raios cósmicos atingem a atmosfera terrestre\n e colidem com núcleos atômicos.\n";
     char perg5_1[] = "Dessas interações, é formada uma cascata de partículas que permeia nossa atmosfera. Muitas dessas\n";
     char perg5_2[] = "partículas são instáveis,\n o que significa que, após determinado intervalo de tempo (tempo de vida), elas\n";
     char perg5_3[] = "decaem. Seja um múon criado a uma altitude de 100 km\n e que se movimenta com uma velocidade vertical\n";
@@ -23,36 +92,21 @@ int main() {
     char perg5_5[] = "aproximadamente, é de:";
               
     do{ 
-        if (a == 0) {
-            system("cls");
-            printf(" **TíTULO\n");
-            printf("\n1 - Perguntas e Respostas\n");
-            printf("2 - Cobra na caixa!\n");
-            printf("3 - Gousmas War\n");
-            printf("\nEscolha Um Jogo: ");
-            scanf(" %c", &a);
-            if (a < '1' || a > '3') {
-                system("cls");
-                printf("\n\n** INVALIDO**\n\n");
-                Sleep(500);
-                a = 0;
-                c = 1;
-			}
-        }
+        
 
         if (a == '1') {
             system("cls");
-            printf("Perguntas e Respostas\n");
-            printf("\n | 1 - PLAY   |");
-            printf("\n | 2 - REGRAS |");
-            printf("\n | 3 - Voltar |");
+            printf("$$$SHOW DO MILHÃO$$$\n");
+            printf("\n [1 PLAY   ]");
+            printf("\n [2 REGRAS ]");
+            printf("\n [3 Voltar ]");
             printf("\nEscolha Uma Opcão: ");
             scanf(" %c", &a);
 
             if (a < '1' || a > '3') {
                 system("cls");
                 printf("Invalido");
-                Sleep(500);
+                Sleep(200);
                 a = '1';
                 c = 1;
             } else if (a == '1') {
@@ -60,8 +114,9 @@ int main() {
             } else if (a == '2') {
                 c = 1;
             } else if (a == '3') {
-                a = 0;
-                c = 1;
+            	jogo = 0;
+            	a=0;
+                c = 0;
                 Beep(500, 50);
             }
         }
@@ -98,7 +153,7 @@ int main() {
                 system ("color 4F");
 				system("cls");
                 printf("\n X Alternativa Errada X\n");
-                somD();
+                
                 printf("\n 1 - Continuar \n");
                 printf("2 - Voltar Menu \n");
                 scanf(" %c", &a);
@@ -107,7 +162,7 @@ int main() {
                 system("color AF");
 				system("cls");
                 printf("\n CORRETO \n");
-                somV();
+                
                 printf("\n 1- Continuar \n");
                 scanf(" %c", &a);
                  system ("color 07");
@@ -151,7 +206,7 @@ int main() {
                 system ("color 4F");
 				system("cls");
                 printf("\n X Alternativa Errada X\n");
-                somD();
+                
                 printf("\n 1 - Continuar \n");
                 printf("2 - Voltar Menu \n");
                 scanf(" %c", &a);
@@ -161,7 +216,7 @@ int main() {
                 system("color AF");
 			    system("cls");
                 printf("\n CORRETO \n");
-                somV();
+                
                 printf("\n 1- Continuar \n");
                 scanf(" %c", &a);
                  system ("color 07");
@@ -203,7 +258,7 @@ int main() {
                 system ("color 4F"); 
 				system("cls");
                 printf("\n X Alternativa Errada X\n");
-                somD();
+                
                 printf("\n 1 - Continuar \n");
                 printf("2 - Voltar Menu \n");
                 scanf(" %c", &a);
@@ -213,7 +268,7 @@ int main() {
                 system("color AF");
 				system("cls");
                 printf("\n CORRETO \n");
-                somV();
+                
                 printf("\n 1- Continuar \n");
                 scanf(" %c", &a);
                 system ("color 07");
@@ -256,7 +311,7 @@ int main() {
                 system ("color 4F");
 			    system("cls");
                 printf("\n X Alternativa Errada X\n");
-                somD();
+                
                 printf("\n 1 - Continuar \n");
                 printf("2 - Voltar Menu \n");
                 scanf(" %c", &a);
@@ -266,7 +321,7 @@ int main() {
                 system("color AF");
 				system("cls");
                 printf("\n CORRETO \n");
-                somV();
+                
                 printf("\n 1- Continuar \n");
                 scanf(" %c", &a);
                 system ("color 07");
@@ -329,7 +384,7 @@ int main() {
                 system ("color 4F");
 			    system("cls");
                 printf("\n X Alternativa Errada X\n");
-                somD();
+                
                 printf("\n\n |    1 - Voltar     |\n");
                 printf(" | 2 - Menu Principal| \n");
                 printf("\n Escolha Uma Opcão: ");
@@ -340,7 +395,7 @@ int main() {
                 system("color AF");
 			    system("cls");
                 printf("\n CORRETO \n");
-                somV();
+                
                 printf("\n\n |    1 - Voltar     |\n");
                 printf(" | 2 - Menu Principal| \n");
                 printf("\n Escolha Uma Opcão: ");
@@ -354,11 +409,12 @@ int main() {
                 a = '2';
                 c = 1;
             } else if (a == '1') {
-                a = '1';
+                b = '5';
             } else if (a == '2') {
-                a = '0';  // Resetar escolha
+                a = 0;  // Resetar escolha
                 c = 1;
             }
+		}
          if (a == '2') {
             system("cls");
             printf("\n REGRAS \n\n");
@@ -367,13 +423,13 @@ int main() {
                 putchar(texto[i]);
                 for (int j = 0; j < 5000000; j++);
             }
-
+		 
             printf("\n\n |    1 - Voltar     |\n");
             printf(" | 2 - Menu Principal| \n");
 
             printf("\n Escolha Uma Opcão: ");
             scanf(" %c", &a);
-
+		    
             if (a < '1' || a > '2') {
                 system("cls");
                 printf("Invalido");
@@ -383,27 +439,305 @@ int main() {
             } else if (a == '1') {
                 a = '1';
             } else if (a == '2') {
-                a = '0';  // Resetar escolha
+                a = 0;  
                 c = 1;
             }
-        }}
+		 }
 
        
     } while (c >= 1 && c <= 2);
+	
 
-    return 0;
+
+	
+	
+}	
+//JOGO 1	
+	
+
+
+
+int jogo2(){
+
+	setlocale(LC_ALL, "portuguese");
+    srand(time(NULL));  // Inicializa o gerador de números aleatórios
+ 	
+ 	int escolha;
+    system("cls");
+    printf("Escolha um jogo:\n");
+    printf("1 - Cobra na Caixa\n");
+    printf("2 - Voltar\n");
+    printf("Digite sua escolha: ");
+    scanf("%d", &escolha);
+
+	
+	
+	
+	
+	while(1){
+		
+	char jogarNovamente;
+	
+	if(escolha == 2){
+		
+		printf("%d", jogo);
+		jogo = 0;   	
+			
+	}
+	
+		
+    switch (escolha) {
+        case 1:
+            
+            	system("cls");
+    const char* nomes[7] = {
+        "Erick", "Alesandra", "Girotto", "Polyana", "Luiz", "Eliani", "kleber"
+    };
+    char jogador1[20], jogador2[20];
+    int escolha, caixaEscolhida;
+    int posicaoCobra, posicaoBotao;
+    
+
+    // Sortear quem começa
+    printf("Escolha o nome do Jogador 1 (de 1 a 7): \n\n");
+    for (int i = 0; i < 7; i++) {
+        printf("%d - %s\n", i + 1, nomes[i]);
+    }
+    scanf("%d", &escolha);
+    strcpy(jogador1, nomes[escolha - 1]);
+	system("cls");
+    printf("Escolha o nome do Jogador 2 (de 1 a 7): \n\n");
+    for (int i = 0; i < 7; i++) {
+        printf("%d - %s\n", i + 1, nomes[i]);
+    }
+    scanf("%d", &escolha);
+    strcpy(jogador2, nomes[escolha - 1]);
+    system("cls");
+    printf("Jogo iniciado! %s começa primeiro!\n", jogador1);
+
+    do {
+        posicaoCobra = rand() % 5;  // Posiciona a cobra aleatoriamente
+        posicaoBotao = rand() % 5;  // Posiciona o botão aleatoriamente
+        while (posicaoCobra == posicaoBotao) {  // Se cobra e botão estiverem na mesma caixa
+            posicaoBotao = rand() % 5;
+        }
+
+        printf("%s, escolha uma caixa (0-4): ", jogador1);
+        scanf("%d", &caixaEscolhida);
+        if (caixaEscolhida == posicaoCobra) {
+        	system("cls");
+            printf("Você encontrou a cobra, %s! Você perdeu!\n", jogador1);
+            break;
+        } else if (caixaEscolhida == posicaoBotao) {
+        	system("cls");
+            printf("Você encontrou o botão! Você venceu, %s!\n", jogador1);
+            break;
+        } else {
+        	system("cls");
+            printf("A caixa está vazia, %s. Próxima rodada.\n", jogador1);
+        }
+
+        // Troca para o segundo jogador
+        printf("%s, escolha uma caixa (0-4): ", jogador2);
+        scanf("%d", &caixaEscolhida);
+        if (caixaEscolhida == posicaoCobra) {
+        	system("cls");
+            printf("Você encontrou a cobra, %s! Você perdeu!\n", jogador2);
+            break;
+        } else if (caixaEscolhida == posicaoBotao) {
+        	system("cls");
+            printf("Você encontrou o botão! Você venceu, %s!\n", jogador2);
+            break;
+        } else {
+        	system("cls");
+            printf("A caixa está vazia, %s. Próxima rodada.\n", jogador2);
+        }
+
+    } while (1);
+	
+	while(1){
+    printf("Deseja jogar novamente? (S - Sim, N - Não): ");
+    scanf(" %c", &jogarNovamente);  // O espaço antes de %c é para consumir o '\n' deixado pelo scanf
+    if (jogarNovamente == 'S' || jogarNovamente == 's') {
+		break;
+		
+    } else if (jogarNovamente == 'N' || jogarNovamente == 'n' || jogo == 0){
+		break;
+    }else{
+
+    	system("cls");
+		printf("INVALIDO");
+		Sleep(200);
+		
+	}
+	}        
+            
+            break;    
+
+        
+    }
+    
+    if(jogarNovamente == 'N' || jogarNovamente == 'n' || jogo == 0){
+		break;
+		
+	}
+    
+	}
+	
 }
 
-int somV() {
-    Beep(1200, 50);
-    Beep(1000, 50);
-    Beep(1200, 50);
-    Beep(1000, 50);
-    Beep(1200, 300);
+#define MAX_FURIA 5
+
+struct Gousma {
+    int furia; 
+};
+
+void inicializarJogador(struct Gousma gousmas[2]) {
+    int i;
+    for (i = 0; i < 2; i++) {
+        gousmas[i].furia = 1; 
+    }
 }
 
-int somD() {
-    Beep(300, 450);
-    Beep(200, 450);
-    Beep(150, 1000);
+void imprimirStatusJogador(struct Gousma gousmas[2]) {
+    int i;
+    printf("Status das Gousmas:\n");
+    for (i = 0; i < 2; i++) {
+        if (gousmas[i].furia > 0) {
+            printf("Gousma %d - Fúria: %d\n", i + 1, gousmas[i].furia);
+        }
+    }
 }
+
+void atacar(struct Gousma atacante[2], struct Gousma defensor[2], int atacanteIdx, int defensorIdx) {
+    defensor[defensorIdx].furia += atacante[atacanteIdx].furia; 
+
+    )
+    atacante[atacanteIdx].furia = 0;
+
+    if (defensor[defensorIdx].furia > MAX_FURIA) {
+        printf("A Gousma %d se desintegrou!\n", defensorIdx + 1);
+        defensor[defensorIdx].furia = 0;
+    }
+}
+
+void dividirGousma(struct Gousma gousmas[2], int gousmaIdx, int novaFuria) {
+    if (novaFuria >= gousmas[gousmaIdx].furia) {
+        printf("Não é possível dividir dessa forma, a fúria nova precisa ser menor!\n");
+        return;
+    }
+
+    
+    if (gousmas[1].furia == 0) { 
+        gousmas[1].furia = novaFuria;
+        gousmas[gousmaIdx].furia -= novaFuria;
+        printf("Gousma %d foi dividida!\n", gousmaIdx + 1);
+    } else {
+        printf("Você já tem duas Gousmas, não pode dividir mais!\n");
+    }
+}
+
+
+int verificarDerrota(struct Gousma gousmas[2]) {
+    int i;
+    for (i = 0; i < 2; i++) {
+        if (gousmas[i].furia > 0) {
+            return 0; 
+        }
+    }
+    return 1;
+}
+
+
+void reiniciarJogo(struct Gousma gousmas1[2], struct Gousma gousmas2[2]) {
+    inicializarJogador(gousmas1);
+    inicializarJogador(gousmas2);
+}
+
+
+int jogo3(){
+
+setlocale(LC_ALL, "portuguese");
+    struct Gousma jogador1[2], jogador2[2];
+    int jogadorAtivo = 1;
+    int opcao, ataqueIdx, alvoIdx, dividirIdx, novaFuria;
+    char continuar;
+
+    inicializarJogador(jogador1);
+    inicializarJogador(jogador2);
+
+    while (1) {
+        system("cls");
+        printf("\nVez do Jogador %d\n", jogadorAtivo);
+        
+        if (jogadorAtivo == 1) {
+            imprimirStatusJogador(jogador1);
+        } else {
+            imprimirStatusJogador(jogador2);
+        }
+
+        printf("\nEscolha uma ação:\n");
+        printf("1. Atacar\n");
+        printf("2. Dividir Gousma\n");
+        printf("3. Verificar status\n");
+        printf("4. Sair\n");
+        printf("Opção: ");
+        scanf("%d", &opcao);
+
+        if (opcao == 1) {
+            printf("Escolha a Gousma para atacar (0 ou 1): ");
+            scanf("%d", &ataqueIdx);
+            printf("Escolha a Gousma alvo (0 ou 1): ");
+            scanf("%d", &alvoIdx);
+
+            if (jogadorAtivo == 1) {
+                atacar(jogador1, jogador2, ataqueIdx, alvoIdx);
+            } else {
+                atacar(jogador2, jogador1, ataqueIdx, alvoIdx);
+            }
+
+            if (verificarDerrota(jogador1)) {
+                printf("Jogador 1 perdeu!\n");
+                break;
+            }
+            if (verificarDerrota(jogador2)) {
+                printf("Jogador 2 perdeu!\n");
+                break;
+            }
+        } else if (opcao == 2) {
+            printf("Escolha a Gousma para dividir (0 ou 1): ");
+            scanf("%d", &dividirIdx);
+            printf("Informe a quantidade de fúria para dividir: ");
+            scanf("%d", &novaFuria);
+
+            if (jogadorAtivo == 1) {
+                dividirGousma(jogador1, dividirIdx, novaFuria);
+            } else {
+                dividirGousma(jogador2, dividirIdx, novaFuria);
+            }
+        } else if (opcao == 3) {
+            if (jogadorAtivo == 1) {
+                imprimirStatusJogador(jogador1);
+            } else {
+                imprimirStatusJogador(jogador2);
+            }
+        } else if (opcao == 4) {
+            printf("Deseja fechar o jogo? (S/N): ");
+            scanf(" %c", &continuar);
+            if (continuar == 'N' || continuar == 'n') {
+                reiniciarJogo(jogador1, jogador2);
+            } else {
+                printf("Saindo do jogo...\n");
+                jogo = 0;
+                break;
+            }
+        }
+
+        jogadorAtivo = (jogadorAtivo == 1) ? 2 : 1;
+    }
+	
+	
+		
+}
+
+

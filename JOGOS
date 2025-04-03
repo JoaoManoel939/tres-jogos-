@@ -612,7 +612,6 @@ void imprimirStatusJogador(struct Gousma gousmas[2]) {
 void atacar(struct Gousma atacante[2], struct Gousma defensor[2], int atacanteIdx, int defensorIdx) {
     defensor[defensorIdx].furia += atacante[atacanteIdx].furia; 
 
-    )
     atacante[atacanteIdx].furia = 0;
 
     if (defensor[defensorIdx].furia > MAX_FURIA) {
